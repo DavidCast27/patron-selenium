@@ -1,0 +1,30 @@
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'co.com.bancolombia.certificacion.curiosity.school'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    //mavenCentral()
+    maven {url  "http://artifactory.bancolombia.corp:80/maven-bancolombia/"}
+
+}
+
+dependencies {
+
+    implementation 'net.serenity-bdd:serenity-core:2.0.17'
+    implementation 'net.serenity-bdd:serenity-junit:2.0.17'
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.20'
+    implementation 'net.serenity-bdd:serenity-screenplay:2.0.17'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:2.0.17'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.9.1'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.7'
+}
+
+gradle.startParameter.continueOnFailure = true
